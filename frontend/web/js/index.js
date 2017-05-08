@@ -12,7 +12,9 @@ $('#js-shell-exec').on('click', function (e) {
 			"cmd": "ping -c 10 google.ca"
 		},
 		success: function success(data) {
-			$('#js-content').html(data);
+			console.log(data);
+			$('#js-content').html(data.formatted_output);
+
 		},
 		error: function error(err) {}
 	});

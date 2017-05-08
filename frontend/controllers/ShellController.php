@@ -23,10 +23,11 @@ class ShellController extends Controller
 
     public function actionExec()
     {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $cmd = Yii::$app->request->post('cmd');
         $run = $this->shellInterpreter->liveExec($cmd);
         if($run['exit_status'] === 0) {
-            return $run['output'];
+            return $run;
         } else {
             throw new \Exception;
         }

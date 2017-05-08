@@ -10,8 +10,8 @@ $('#js-shell-exec').on('click', function(e) {
 			"cmd" : "ping -c 10 google.ca" 
 		},
 		success: data => {
-			//$('#js-content').html(data);
-			
+			$('#js-content').html(data);
+
 		},
 		error: err => {
 		}
